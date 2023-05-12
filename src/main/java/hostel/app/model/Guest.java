@@ -1,8 +1,19 @@
 package hostel.app.model;
+
+import java.util.*;
+
 public class Guest {
     private String name;
     private String lastName;
-    private Information information;
+
+    private Address address;
+
+    private String email;
+
+    private Date birthday;
+
+    private List<Reservation> reservations = new ArrayList<>();
+
 
     public Guest() {
         this("");
@@ -14,7 +25,6 @@ public class Guest {
     public Guest(String name, String lastName){
         this.name = name;
         this.lastName = lastName;
-        this.information=new Information();
     }
 
     public String getName() {
@@ -37,18 +47,39 @@ public class Guest {
         this.lastName = lastName;
     }
 
-    public void setAdress(String adress)
-    {
-        information.setAdress(adress);
+    public Address getAddress() {
+        return address;
     }
-    public String getZipCode(){return information.getZipCode();}
-    public void setZipCode(String zipCode){information.setZipCode(zipCode);};
-    public String getCountry(){return information.getCountry();}
-    public void setCountry(String country){information.setCountry(country);}
-    public String getCity(){return information.getCity();}
-    public void setCity(String city){information.setCity(city);}
-    public String getNumberAdress(){return information.getNumberAdress();}
-    public void setNumberAdress(String numberAdress){information.setNumberAdress(numberAdress);}
-    public String getContact(){return information.getContact();}
-    public void setContact(String contact){information.setContact(contact);}
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public void addReservation(Reservation reservation) {
+        reservations.add(reservation);
+    }
 }
